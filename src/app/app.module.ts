@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { PipeComponent } from './pipefolder/modules/components/pipe/pipe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateformComponent } from './templateform/modules/components/templateform/templateform.component';
+import { ReactiveformComponent } from './reactiveform/modules/components/reactiveform/reactiveform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PipePipe,
     PipeComponent,
-    TemplateformComponent
+    TemplateformComponent,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,

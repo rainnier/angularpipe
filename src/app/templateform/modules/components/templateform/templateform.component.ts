@@ -12,7 +12,11 @@ export class TemplateformComponent implements OnInit {
 
   model:Learner = {
     name: 'Joan Arc',
-    nickname: 'j-a'
+    nickname: 'j-a',
+    address: {
+      bldgNo:'',
+      street:''
+    }
   } 
   ngOnInit(): void {
   }

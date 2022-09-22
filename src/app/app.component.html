@@ -1,11 +1,31 @@
 <form [formGroup]="learnerForm"(ngSubmit)="submit()">
   <div class="form-group">
     <label for="name">Name</label>
-    <input formControlName="name" type="text" id="name" class="form-control" required>
+    <input formControlName="name" type="text" id="name" class="form-control">
+    <div *ngIf="name?.errors?.['minlength']" class="alert alert-danger">Minimum Length: 2</div>
   </div>
   <div class="form-group">
     <label for="nickname">Nickname</label>
     <input formControlName="nickname" type="text" id="nickname" class="form-control" required>
   </div>
+  <div formGroupName="address">
+    <label for="bldgNo">Building Number</label>
+    <input formControlName="bldgNo" type="text" id="bldgNo" class="form-control" required>
+
+    <label for="street">Street</label>
+    <input formControlName="street" type="text" id="street" class="form-control" required>
+  </div>
+
+
+  <!-- <ng-container formArrayName="ff">
+    <label for="ff">Favorite Foods</label>
+    <div *ngFor="let _ of ff" class="input-group mb-3">
+      
+    </div>
+  </ng-container> -->
+  <button type="button" class="btn btn-info" (click)="addFavorite()">Add Favorites</button>
+
   <button type="submit">Submit</button>
+  <button type="button"  class="btn btn-info" (click)="reset()">Reset</button>
+  <button type="button"  class="btn btn-info" (click)="markNickName()">Reset Nickname</button>
 </form>
