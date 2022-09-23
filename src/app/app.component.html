@@ -17,15 +17,17 @@
   </div>
 
 
-  <!-- <ng-container formArrayName="ff">
-    <label for="ff">Favorite Foods</label>
-    <div *ngFor="let _ of ff" class="input-group mb-3">
+  <ng-container formArrayName="favoriteFoods">
+    <label for="favoriteFoods">Favorite Foods</label>
+    <div *ngFor="let _ of ff.controls; index as i" class="input-group mb-3">
+      <input [formControlName]="i" class="form-control">
+      <button type="button" class="btn btn-danger" (click)="deleteFavorite(i)">Delete</button>
       
     </div>
-  </ng-container> -->
-  <button type="button" class="btn btn-info" (click)="addFavorite()">Add Favorites</button>
+    <button class="btn btn-info" (click)="addFavorite()">Add Favorite</button>
+  </ng-container>
 
-  <button type="submit">Submit</button>
-  <button type="button"  class="btn btn-info" (click)="reset()">Reset</button>
-  <button type="button"  class="btn btn-info" (click)="markNickName()">Reset Nickname</button>
+  <button type="submit" class="btn btn-success">Submit</button>
+  <!-- <button type="button"  class="btn btn-info" (click)="reset()">Reset</button>
+  <button type="button"  class="btn btn-info" (click)="markNickName()">Reset Nickname</button> -->
 </form>

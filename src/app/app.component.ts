@@ -49,7 +49,11 @@ export class AppComponent implements OnInit, AfterViewInit{
   }
 
   addFavorite() {
-    (this.learnerForm.get('favoriteFoods') as FormArray).push(new FormControl())
+    this.ff.push(new FormControl())
+  }
+
+  deleteFavorite(i:number) {
+    this.ff.removeAt(i)
   }
 
   get name() {
